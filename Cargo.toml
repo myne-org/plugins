@@ -4,3 +4,9 @@ members = [
     "plugins/*",
     "shared/",
 ]
+
+[workspace.dependencies]
+serde = "1.0"
+extism-pdk = "0.3.4"
+extism = "0.5.2"
+shared = { path = "./shared/" }
