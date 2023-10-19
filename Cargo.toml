@@ -9,4 +9,5 @@ members = [
 serde = "1.0"
 extism-pdk = "0.3.4"
 extism = "0.5.2"
+anyhow = "1.0.75"
 shared = { path = "./shared/" }
