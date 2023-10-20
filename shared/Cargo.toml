@@ -9,3 +9,7 @@ edition = "2021"
 [dependencies]
 anyhow = { workspace = true }
 extism-pdk = { workspace = true }
+serde = { workspace = true }
+
+[features]
+fn-docs = []

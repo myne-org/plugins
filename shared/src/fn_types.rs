@@ -13,3 +13,5 @@ pub type SearchFn = dyn Fn(String) -> FnResult<Vec<SearchResult>>;
 /// 
 /// Return all chapters of a series
 pub type GetChaptersFn = dyn Fn(String) -> FnResult<Vec<Chapter>>;
+
+pub type GetInfoFn = dyn Fn(String) -> FnResult<()>;

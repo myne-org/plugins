@@ -1,7 +1,11 @@
 mod structs;
-mod types;
+mod enums;
+#[cfg(feature = "fn-docs")]
+mod fn_types;
 
 pub use anyhow::Result;
 
+pub use enums::*;
 pub use structs::*;
-pub use types::*;
+#[cfg(feature = "fn-docs")]
+pub use fn_types::*;
