@@ -1,4 +1,4 @@
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Serialize};
 
 /// Results returned from the `search` function
 #[derive(Debug, Clone, Serialize, Deserialize)]
