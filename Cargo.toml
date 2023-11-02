@@ -15,4 +15,4 @@ url = "2.4.1"
 scraper = "0.18.1"
 headless = { package = "headless_chrome", version = "1.0.7" }
 reqwest = { version = "0.11.22", features = ["blocking", "json"] }
-interfaces = { path = "./interfaces/" }
+interfaces = { package = "plugin_interface", path = "./interfaces/" }
