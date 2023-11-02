@@ -2,7 +2,7 @@
 resolver = "2"
 members = [
     "plugins/*",
-    "shared/",
+    "interfaces/",
 ]
 
 [workspace.dependencies]
@@ -10,4 +10,5 @@ serde = "1.0"
 extism-pdk = "0.3.4"
 extism = "0.5.2"
 anyhow = "1.0.75"
-shared = { path = "./shared/" }
+reqwest = { version = "0.11.22", features = ["blocking", "json"] }
+interfaces = { path = "./interfaces/" }

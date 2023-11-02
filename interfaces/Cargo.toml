@@ -1,5 +1,5 @@
 [package]
-name = "shared"
+name = "plugin_interface"
 description = "Library exporting necessary items and re-exporting other libraries to be shared across multiple plugins"
 version = "0.1.0"
 edition = "2021"
