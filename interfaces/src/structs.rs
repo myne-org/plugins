@@ -1,13 +1,15 @@
 use serde::{Deserialize, Serialize};
 
 /// Metadata of a plugin
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct Metadata {
     /// Extension name.
     /// This essentially serves as the extension's unique identifier
     pub name: String,
     /// Current version of the extension
     pub version: String,
+    /// Description of the extension
+    pub description: String,
     /// Url to the site this extension is for
     pub url: String,
     /// Mark as true if the extension is deprecated/unmaintained for some reason
@@ -18,7 +20,7 @@ pub struct Metadata {
 }
 
 /// Results returned from the `search` function
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct SearchResult {
     /// Series ID
     pub id: String,
@@ -33,7 +35,7 @@ pub struct SearchResult {
 }
 
 /// A chapter entry
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct Chapter {
     /// Chapter id
     pub id: String,
@@ -52,7 +54,7 @@ pub struct Chapter {
 }
 
 /// Represents info about a series
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct Series {
     /// Series ID
     ///
