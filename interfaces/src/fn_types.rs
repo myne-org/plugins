@@ -1,9 +1,9 @@
-use crate::{Chapter, SearchResult, Series};
+use crate::{Chapter, SearchResult, Series, Metadata};
 use extism_pdk::FnResult;
 
 /// Get metadata function signature
 /// Function name: `metadata`
-pub type GetMetadataFn = dyn Fn() -> FnResult<()>;
+pub type GetMetadataFn = dyn Fn() -> FnResult<Metadata>;
 
 /// Search function signature
 /// Function name: `search`
