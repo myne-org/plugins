@@ -1,4 +1,4 @@
-use crate::{Chapter, SearchResult, Series, Metadata};
+use crate::{Chapter, Metadata, SearchResult, Series};
 use extism_pdk::FnResult;
 
 /// Get metadata function signature
