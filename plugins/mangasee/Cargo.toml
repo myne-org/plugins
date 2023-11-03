@@ -10,3 +10,4 @@ scraper = { workspace = true }
 headless = { workspace = true }
 extism-pdk = { workspace = true }
 interfaces = { workspace = true }
+url = { workspace = true }

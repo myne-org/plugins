@@ -13,6 +13,6 @@ extism = "0.5.2"
 anyhow = "1.0.75"
 url = "2.4.1"
 scraper = "0.18.1"
-headless = { package = "headless_chrome", version = "1.0.7" }
+headless = { package = "headless_chrome", version = "1.0.7", features = ["fetch"] }
 reqwest = { version = "0.11.22", features = ["blocking", "json"] }
 interfaces = { package = "plugin_interface", path = "./interfaces/" }
