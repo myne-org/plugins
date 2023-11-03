@@ -13,19 +13,11 @@
 #[macro_export]
 macro_rules! metadata {
     ($url:expr) => {
-        make_metadata!($url, false, false)
+        metadata!($url, false, false)
     };
     ($url:expr, $deprecated:expr) => {
-        make_metadata!($url, $deprecated, false)
+        metadata!($url, $deprecated, false)
     };
-    ($url:expr, $deprecated:expr, $nsfw:expr) => {
-        make_metadata!($url, $deprecated, $nsfw)
-    };
-}
-
-/// internal macro for making metadata
-#[allow(unused)]
-macro_rules! make_metadata {
     ($url:expr, $deprecated:expr, $nsfw:expr) => {
         $crate::Metadata {
             name: String::from(env!("CARGO_PKG_NAME")),

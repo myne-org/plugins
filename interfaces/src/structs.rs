@@ -1,3 +1,4 @@
+use extism_pdk::{ToMemory, Json};
 use serde::{Deserialize, Serialize};
 
 /// Metadata of a plugin
@@ -17,6 +18,12 @@ pub struct Metadata {
     /// If the extension is for adult sites or sites that mostly
     /// provide nsfw series
     pub nsfw: bool,
+}
+
+impl ToMemory for Metadata {
+    fn to_memory(&self) -> Result<extism_pdk::Memory, anyhow::Error> {
+        Json(self).to_memory()
+    }
 }
 
 /// Results returned from the `search` function
