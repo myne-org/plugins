@@ -11,3 +11,4 @@ headless = { workspace = true }
 extism-pdk = { workspace = true }
 interfaces = { workspace = true }
 url = { workspace = true }
+anyhow = { workspace = true }

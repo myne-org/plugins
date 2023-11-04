@@ -1,4 +1,4 @@
-use extism_pdk::{ToMemory, Json};
+use extism_pdk::{Json, ToMemory};
 use serde::{Deserialize, Serialize};
 
 use crate::SeriesStatus;
@@ -82,6 +82,8 @@ pub struct Series {
     pub synonyms: Vec<String>,
     /// Genres of the series. Return empty vec if not applicable
     pub genres: Vec<String>,
+    /// Author(s) of this series. Return empty vec if not applicable
+    pub authors: Vec<String>,
     /// Thumbnail image for the series
     pub cover_url: String,
 }

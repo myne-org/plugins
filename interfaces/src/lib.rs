@@ -1,8 +1,8 @@
 mod enums;
 #[cfg(feature = "fn-docs")]
 mod fn_types;
-mod structs;
 pub(crate) mod macros;
+mod structs;
 
 pub use anyhow::Result;
 
