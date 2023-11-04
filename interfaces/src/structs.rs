@@ -1,6 +1,8 @@
 use extism_pdk::{ToMemory, Json};
 use serde::{Deserialize, Serialize};
 
+use crate::SeriesStatus;
+
 /// Metadata of a plugin
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct Metadata {
@@ -72,8 +74,14 @@ pub struct Series {
     pub extension_id: String,
     /// Series title
     pub title: String,
+    /// Series's description
+    pub description: String,
+    /// Current status of the series
+    pub status: SeriesStatus,
     /// Other names of the series
     pub synonyms: Vec<String>,
     /// Genres of the series. Return empty vec if not applicable
     pub genres: Vec<String>,
+    /// Thumbnail image for the series
+    pub cover_url: String,
 }
