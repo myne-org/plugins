@@ -1,9 +1,7 @@
 use anyhow::Context;
 use extism_pdk::*;
-use headless::Browser;
 use interfaces::{metadata, Metadata, SearchResult, Series, SeriesStatus};
 use scraper::{Html, Selector};
-use url::Url;
 
 const BASE_URL: &'static str = "https://mangasee123.com";
 
