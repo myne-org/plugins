@@ -12,3 +12,4 @@ extism-pdk = { workspace = true }
 interfaces = { workspace = true }
 url = { workspace = true }
 anyhow = { workspace = true }
+lazy_static = { workspace = true }
