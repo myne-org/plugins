@@ -2,12 +2,22 @@ use anyhow::Context;
 use extism_pdk::*;
 use interfaces::{metadata, Metadata, SearchResult, Series, SeriesStatus};
 use scraper::{Html, Selector};
+use reqwest::blocking::Client;
+use lazy_static::lazy_static;
 
 const BASE_URL: &'static str = "https://mangasee123.com";
 
+lazy_static! {
+    /// Metadata related to the plugin
+    static ref METADATA: Metadata = metadata!(BASE_URL);
+
+    /// A preinitialized client for making multiple requests
+    static ref CLIENT: Client = Client::new();
+}
+
 #[plugin_fn]
 pub fn metadata(_: ()) -> FnResult<Metadata> {
-    Ok(metadata!(BASE_URL))
+    Ok(METADATA.to_owned())
 }
 
 // #[plugin_fn]
@@ -16,7 +26,7 @@ pub fn search(_query: &str) -> FnResult<Vec<SearchResult>> {
 }
 
 pub fn get_series(id: String) -> FnResult<Series> {
-    let page = reqwest::blocking::get(format!("{BASE_URL}/manga/{id}"))?.text()?;
+    let page = CLIENT.get(format!("{BASE_URL}/manga/{id}")).send()?.text()?;
     // some list item tags are incorrectly closed with </i> instead of </li>,
     // so we manually replace them here
     let page = page.replace("</i>", "</li>");
@@ -63,8 +73,7 @@ pub fn get_series(id: String) -> FnResult<Series> {
         .join(" ");
 
     let series = Series {
-        extension_id: String::from(env!("CARGO_PKG_NAME")),
-        id: id.clone(),
+        extension_id: METADATA.name.clone(),
         title,
         authors,
         genres,
@@ -72,6 +81,7 @@ pub fn get_series(id: String) -> FnResult<Series> {
         synonyms: vec![],
         status,
         cover_url: format!("https://temp.compsci88.com/cover/${id}.jpg"),
+        id,
     };
     Ok(series)
 }
