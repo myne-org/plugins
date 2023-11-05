@@ -1,9 +1,9 @@
 use anyhow::Context;
 use extism_pdk::*;
 use interfaces::{metadata, Metadata, SearchResult, Series, SeriesStatus};
-use scraper::{Html, Selector};
-use reqwest::blocking::Client;
 use lazy_static::lazy_static;
+use reqwest::blocking::Client;
+use scraper::{Html, Selector};
 
 const BASE_URL: &'static str = "https://mangasee123.com";
 
@@ -26,7 +26,10 @@ pub fn search(_query: &str) -> FnResult<Vec<SearchResult>> {
 }
 
 pub fn get_series(id: String) -> FnResult<Series> {
-    let page = CLIENT.get(format!("{BASE_URL}/manga/{id}")).send()?.text()?;
+    let page = CLIENT
+        .get(format!("{BASE_URL}/manga/{id}"))
+        .send()?
+        .text()?;
     // some list item tags are incorrectly closed with </i> instead of </li>,
     // so we manually replace them here
     let page = page.replace("</i>", "</li>");
