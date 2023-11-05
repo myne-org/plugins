@@ -1,5 +1,6 @@
 [package]
 name = "mangadex"
+description = "Plugin for mangadex"
 version = "0.1.0"
 edition = "2021"
 
