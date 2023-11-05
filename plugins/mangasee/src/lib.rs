@@ -5,7 +5,7 @@ use lazy_static::lazy_static;
 use reqwest::blocking::Client;
 use scraper::{Html, Selector};
 
-const BASE_URL: &'static str = "https://mangasee123.com";
+const BASE_URL: &str = "https://mangasee123.com";
 
 lazy_static! {
     /// Metadata related to the plugin
