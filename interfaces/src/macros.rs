@@ -13,10 +13,10 @@
 #[macro_export]
 macro_rules! metadata {
     ($url:expr) => {
-        metadata!($url, false, false)
+        $crate::metadata!($url, false, false)
     };
     ($url:expr, $deprecated:expr) => {
-        metadata!($url, $deprecated, false)
+        $crate::metadata!($url, $deprecated, false)
     };
     ($url:expr, $deprecated:expr, $nsfw:expr) => {
         $crate::Metadata {
